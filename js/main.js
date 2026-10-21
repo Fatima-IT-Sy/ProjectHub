@@ -441,10 +441,8 @@ function buildNavbar() {
     '<li><a class="dropdown-item" href="' + pagesPath + 'profile.html"><i class="bi bi-person"></i>My Profile</a></li>' +
     '<li><a class="dropdown-item" href="' + pagesPath + 'requests.html"><i class="bi bi-envelope"></i>Requests' + badge + "</a></li>" +
     '<li><hr class="dropdown-divider"></li>' +
-    '<li><button class="dropdown-item text-danger" type="button" id="logoutButton"><i class="bi bi-box-arrow-right"></i>Log out</button></li>' +
+    '<li><a class="dropdown-item text-danger" href="' + pagesPath + 'logout.html"><i class="bi bi-box-arrow-right"></i>Log out</a></li>' +
     "</ul></div></div></div></div>";
-
-  document.getElementById("logoutButton").addEventListener("click", showLogoutDialog);
 }
 
 // The admin sees the dashboard link and the account menu only
@@ -470,13 +468,11 @@ function buildAdminNavbar(user, logoHtml) {
     '<li class="menu-user"><div class="fw-semibold">' + escapeHtml(user.fullName) + "</div>" +
     '<div class="meta">' + escapeHtml(user.email) + "</div></li>" +
     '<li><hr class="dropdown-divider"></li>' +
-    '<li><button class="dropdown-item text-danger" type="button" id="logoutButton"><i class="bi bi-box-arrow-right"></i>Log out</button></li>' +
+    '<li><a class="dropdown-item text-danger" href="' + pagesPath + 'logout.html"><i class="bi bi-box-arrow-right"></i>Log out</a></li>' +
     "</ul></div></div></div></div>";
-
-  document.getElementById("logoutButton").addEventListener("click", showLogoutDialog);
 }
 
-// ---------- Confirm dialogs (logout, delete account) ----------
+// ---------- Confirm dialog (delete account) ----------
 
 function showConfirmDialog(options) {
   const oldDialog = document.getElementById("confirmDialog");
@@ -509,23 +505,10 @@ function showConfirmDialog(options) {
   modal.show();
 }
 
-function showLogoutDialog() {
-  showConfirmDialog({
-    topHtml: '<img class="modal-logo" src="' + rootPath + 'images/logo.png" alt="">',
-    title: "Log out of ProjectHub?",
-    text: "You can log in again anytime.",
-    buttonText: "Log out",
-    buttonClass: "btn-primary",
-    onConfirm: logoutUser
-  });
-}
-
 // ---------- Login session ----------
 
 function logoutUser() {
   localStorage.removeItem("currentUserId");
-  setNextPageMessage("You have logged out.");
-  window.location.href = pagesPath + "login.html";
 }
 
 // Send the user to the login page if they are not logged in.
