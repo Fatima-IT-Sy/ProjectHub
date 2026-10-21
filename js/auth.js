@@ -1,4 +1,4 @@
-// Register, Login, and Reset Password pages
+// Register, Login, Reset Password, and Logout pages
 
 function isValidEmail(email) {
   // Simple check: text@text.text
@@ -223,5 +223,36 @@ function setupResetPage() {
 
     setNextPageMessage("Your password has been changed. You can now log in.");
     window.location.href = "login.html";
+  });
+}
+
+// ---------- Logout page ----------
+
+function setupLogoutPage() {
+  // Only a logged in student or admin can log out
+  const user = requireLogin(true);
+  if (!user) {
+    return;
+  }
+
+  document.getElementById("logoutName").textContent = user.fullName;
+
+  // Cancel: go back to the page the user came from
+  document.getElementById("cancelLogout").addEventListener("click", function () {
+    const cameFromSite = document.referrer.indexOf(window.location.origin) === 0;
+    if (cameFromSite && window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = isAdmin(user) ? "admin.html" : "../index.html";
+    }
+  });
+
+  // Log out: end the session and show the done message
+  document.getElementById("confirmLogout").addEventListener("click", function () {
+    logoutUser();
+    buildNavbar();
+    document.getElementById("logoutAsk").classList.add("d-none");
+    document.getElementById("logoutDone").classList.remove("d-none");
+    document.getElementById("loginAgain").focus();
   });
 }
