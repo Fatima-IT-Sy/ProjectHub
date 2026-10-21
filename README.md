@@ -6,7 +6,7 @@ for hackathons, competitions, and practical projects.
 
 ## Team
 - Fatma Mohammed
-- Noura Almifqaee
+- Norah Almifqaee
 - Reema Almjaideea
 - Qmash Alzabin
   
