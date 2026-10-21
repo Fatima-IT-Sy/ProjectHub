@@ -1,6 +1,3 @@
-/* ProjectHub theme on top of Bootstrap 5 (dark mode).
-   Dark background, aurora lights, glass cards, and purple / cyan / pink accents. */
-
 :root,
 [data-bs-theme="dark"] {
   --ph-bg: #090D1C;
@@ -1025,13 +1022,19 @@ a {
   box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.9);
 }
 
-.confirm-modal .modal-logo {
+.confirm-modal .modal-logo,
+.ph-card .modal-logo {
   width: 72px;
   margin: 0.5rem auto 1rem;
   background-color: #FFFFFF;
   border-radius: 50%;
   padding: 10px;
   box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
+}
+
+.ph-card .modal-logo {
+  display: block;
+  margin-bottom: 0;
 }
 
 .danger-icon,
