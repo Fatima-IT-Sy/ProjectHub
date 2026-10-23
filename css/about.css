@@ -1,0 +1,455 @@
+/* About Us page. Colors and fonts come from style.css. */
+
+.about {
+  overflow-x: clip;
+}
+
+.about h1,
+.about h2,
+.about h3 {
+  font-family: var(--ph-heading);
+}
+
+/* Parts fade in when they come into view (only when JavaScript is on) */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ph-ease), transform 0.7s var(--ph-ease);
+}
+
+.js .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.delay-1 {
+  transition-delay: 0.12s !important;
+}
+
+.delay-2 {
+  transition-delay: 0.24s !important;
+}
+
+/* ---------- Intro ---------- */
+
+.about-hero {
+  padding: 6rem 0 4rem;
+  text-align: center;
+}
+
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--ph-muted);
+  border: 1px solid var(--ph-border);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.about-eyebrow i {
+  color: var(--ph-cyan);
+}
+
+.about-hero h1 {
+  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.about-hero p {
+  max-width: 44rem;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--ph-muted);
+}
+
+/* ---------- Sections ---------- */
+
+.about-section {
+  padding: 4.5rem 0;
+}
+
+.about-head {
+  max-width: 40rem;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.about-head h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 0.75rem;
+}
+
+.about-head p {
+  color: var(--ph-muted);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* ---------- The team ---------- */
+
+.team-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.team-line {
+  fill: none;
+  stroke: url(#teamLineColor);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.6));
+  transition: stroke-dashoffset 0.7s var(--ph-ease);
+}
+
+.team-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.member-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: 20px;
+  border: 1px solid var(--ph-border-strong);
+  background: linear-gradient(160deg, rgba(20, 26, 46, 0.95), rgba(11, 16, 32, 0.95));
+  box-shadow: var(--ph-shadow);
+  transition: translate 0.35s var(--ph-ease), border-color 0.35s, box-shadow 0.35s;
+}
+
+.member-card:hover {
+  translate: 0 -4px;
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: var(--ph-shadow-hover);
+}
+
+.member-avatar {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, var(--ph-purple), var(--ph-cyan));
+}
+
+.member-info strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.member-role {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  color: #FFFFFF;
+  background-color: rgba(6, 182, 212, 0.18);
+  border: 1px solid rgba(6, 182, 212, 0.6);
+}
+
+.member-check {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.95rem;
+  color: #FFFFFF;
+  background-color: var(--ph-green);
+  box-shadow: 0 0 0 5px rgba(16, 185, 129, 0.18);
+  transition: transform 0.4s var(--ph-ease), opacity 0.4s;
+}
+
+.waiting .member-card:not(.joined) .member-check {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.hub-card {
+  position: relative;
+  width: 230px;
+  padding: 1.75rem 1.5rem;
+  border-radius: 26px;
+  text-align: center;
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  background: linear-gradient(160deg, rgba(124, 58, 237, 0.25), rgba(6, 182, 212, 0.08)), var(--ph-bg-2);
+  box-shadow: 0 30px 70px -30px rgba(124, 58, 237, 0.8);
+  transition: border-color 0.6s, box-shadow 0.6s;
+}
+
+.connected .hub-card {
+  border-color: rgba(6, 182, 212, 0.65);
+  box-shadow: 0 0 0 10px rgba(6, 182, 212, 0.07), 0 30px 70px -30px rgba(6, 182, 212, 0.8);
+}
+
+.hub-logo {
+  display: inline-grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 0.9rem;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.55);
+}
+
+.hub-logo img {
+  width: 48px;
+}
+
+.hub-card strong {
+  display: block;
+  font-family: var(--ph-heading);
+  font-size: 1.4rem;
+}
+
+.hub-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ph-muted);
+  margin: 0.2rem 0 0.9rem;
+}
+
+.hub-progress {
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.hub-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--ph-text-gradient);
+  transition: width 0.5s var(--ph-ease);
+}
+
+.hub-count {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--ph-muted);
+}
+
+/* ---------- Numbers ---------- */
+
+.number-card,
+.value-card {
+  height: 100%;
+  padding: 2rem;
+  border-radius: 24px;
+  border: 1px solid var(--ph-border);
+  background: linear-gradient(160deg, rgba(20, 26, 46, 0.9), rgba(11, 16, 32, 0.9));
+  transition: translate 0.35s var(--ph-ease), border-color 0.35s;
+}
+
+.number-card:hover,
+.value-card:hover {
+  translate: 0 -5px;
+  border-color: rgba(168, 85, 247, 0.45);
+}
+
+.big-number {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-family: var(--ph-heading);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  background: var(--ph-text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.number-card p,
+.value-card p {
+  margin: 0;
+  color: var(--ph-muted);
+  font-size: 1.05rem;
+}
+
+.about-source {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ph-muted);
+}
+
+/* ---------- Values ---------- */
+
+.value-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 1.25rem;
+  border-radius: 16px;
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, var(--ph-purple), var(--ph-cyan));
+  box-shadow: 0 10px 24px -10px var(--ph-purple);
+}
+
+.value-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Closing ---------- */
+
+.about-cta {
+  padding: 4.5rem 2rem;
+  border-radius: 32px;
+  text-align: center;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  background:
+    radial-gradient(circle at 25% 30%, rgba(124, 58, 237, 0.45), transparent 40%),
+    radial-gradient(circle at 75% 70%, rgba(6, 182, 212, 0.3), transparent 40%),
+    var(--ph-bg-2);
+}
+
+.cta-logo {
+  display: inline-grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.06), 0 0 50px rgba(168, 85, 247, 0.6);
+}
+
+.cta-logo img {
+  width: 54px;
+}
+
+.about-cta h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 0.75rem;
+}
+
+.about-cta p {
+  color: #CBD5E1;
+  margin-bottom: 2rem;
+}
+
+/* ---------- X accounts on member cards ---------- */
+
+.member-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+.member-tags .member-role {
+  margin-top: 0;
+}
+
+.member-x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 0.85rem;
+  border-radius: 50%;
+  color: #C4B5FD;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+.member-x:hover,
+.member-x:focus-visible {
+  color: #FFFFFF;
+  border-color: rgba(168, 85, 247, 0.7);
+  background-color: rgba(124, 58, 237, 0.2);
+}
+
+/* ---------- Tablet and mobile ---------- */
+
+@media (max-width: 767px) {
+  .about-hero {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .about-section {
+    padding: 3rem 0;
+  }
+
+  /* Members go above and below the ProjectHub card */
+  .team-stage {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 360px;
+  }
+
+  .team-column {
+    gap: 1.25rem;
+  }
+
+  .hub-card {
+    width: 100%;
+  }
+
+  .about-cta {
+    padding: 3rem 1.25rem;
+  }
+}
+
+/* ---------- Less motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .team-line,
+  .member-card,
+  .number-card,
+  .value-card {
+    transition: none;
+  }
+}
