@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | ProjectHub</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <script>
+    // Tell the CSS that JavaScript is on, and if the visitor is a guest
+    document.documentElement.classList.add("js");
+    try {
+      if (!localStorage.getItem("currentUserId")) {
+        document.documentElement.classList.add("guest");
+      }
+    } catch (error) {
+      document.documentElement.classList.add("guest");
+    }
+    // Safety: if the animations do not start, show everything after 2.5 seconds
+    setTimeout(function () {
+      if (!window.landingStarted) {
+        document.documentElement.classList.add("show-all");
+      }
+    }, 2500);
+  </script>
+</head>
+<body>
+  <nav id="navbar"></nav>
+
+  <!-- Shown to visitors who are not logged in -->
+  <main id="guestSection" class="landing">
+
+    <!-- Aurora background -->
+    <div class="landing-bg" aria-hidden="true">
+      <div class="aurora-layer">
+        <span class="aurora aurora-1"></span>
+        <span class="aurora aurora-2"></span>
+        <span class="aurora aurora-3"></span>
+      </div>
+      <div class="bg-grid"></div>
+    </div>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-6 hero-text">
+            <span class="eyebrow" data-hero><i class="bi bi-stars"></i>Hackathons · Competitions · Practical projects</span>
+            <h1>
+              <span class="hero-line" data-hero>Build a team where</span>
+              <span class="hero-line gradient-text" data-hero>every skill fits.</span>
+            </h1>
+            <p class="hero-description" data-hero>ProjectHub helps university students find teammates for hackathons, competitions, and practical projects. Add your skills, and we show you the teams that need them.</p>
+          </div>
+
+          <div class="col-lg-6">
+            <!-- Example of how matching works (decorative) -->
+            <div class="match-stage" id="matchStage">
+              <div class="match-glow" aria-hidden="true"></div>
+              <div class="match-scene" id="matchScene" role="img" aria-label="Example: four students with Front-end, Back-end, UI/UX, and Data skills are connected to a team that needs these skills.">
+                <svg class="match-lines" viewBox="0 0 600 520" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="lineFront" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06B6D4"/><stop offset="1" stop-color="#A855F7"/></linearGradient>
+                    <linearGradient id="lineBack" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#A855F7"/></linearGradient>
+                    <linearGradient id="lineDesign" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F472B6"/><stop offset="1" stop-color="#A855F7"/></linearGradient>
+                    <linearGradient id="lineData" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#06B6D4"/></linearGradient>
+                  </defs>
+                  <circle class="ring" cx="300" cy="260" r="150"/>
+                  <circle class="ring ring-outer" cx="300" cy="260" r="235"/>
+                  <path class="match-line" data-skill="front" stroke="url(#lineFront)" d="M80 52 C 80 170, 120 230, 190 230"/>
+                  <path class="match-line" data-skill="design" stroke="url(#lineDesign)" d="M520 82 C 520 180, 480 230, 410 230"/>
+                  <path class="match-line" data-skill="back" stroke="url(#lineBack)" d="M90 452 C 90 350, 130 300, 190 300"/>
+                  <path class="match-line" data-skill="data" stroke="url(#lineData)" d="M510 468 C 510 360, 470 300, 410 300"/>
+                  <path class="match-flow" data-skill="front" d="M80 52 C 80 170, 120 230, 190 230"/>
+                  <path class="match-flow" data-skill="design" d="M520 82 C 520 180, 480 230, 410 230"/>
+                  <path class="match-flow" data-skill="back" d="M90 452 C 90 350, 130 300, 190 300"/>
+                  <path class="match-flow" data-skill="data" d="M510 468 C 510 360, 470 300, 410 300"/>
+                </svg>
+
+                <span class="example-tag">Example match</span>
+
+                <div class="person person-front" data-skill="front">
+                  <span class="person-avatar">SA</span>
+                  <span class="person-info"><strong>Sara</strong><span class="skill skill-front">Front-end</span></span>
+                  <i class="bi bi-check-lg person-check"></i>
+                </div>
+                <div class="person person-design" data-skill="design">
+                  <span class="person-avatar">LA</span>
+                  <span class="person-info"><strong>Lama</strong><span class="skill skill-design">UI/UX</span></span>
+                  <i class="bi bi-check-lg person-check"></i>
+                </div>
+                <div class="person person-back" data-skill="back">
+                  <span class="person-avatar">HI</span>
+                  <span class="person-info"><strong>Hind</strong><span class="skill skill-back">Back-end</span></span>
+                  <i class="bi bi-check-lg person-check"></i>
+                </div>
+                <div class="person person-data" data-skill="data">
+                  <span class="person-avatar">MA</span>
+                  <span class="person-info"><strong>Maha</strong><span class="skill skill-data">Data</span></span>
+                  <i class="bi bi-check-lg person-check"></i>
+                </div>
+
+                <div class="project-card">
+                  <span class="project-type"><i class="bi bi-lightning-charge-fill"></i>Hackathon</span>
+                  <strong class="project-title">Smart Campus App</strong>
+                  <span class="project-label">Looking for</span>
+                  <div class="slots">
+                    <span class="slot" data-skill="front">Front-end</span>
+                    <span class="slot" data-skill="back">Back-end</span>
+                    <span class="slot" data-skill="design">UI/UX</span>
+                    <span class="slot" data-skill="data">Data</span>
+                  </div>
+                  <div class="team-progress">
+                    <span class="progress-track"><span class="progress-fill" id="teamProgressFill"></span></span>
+                    <span class="progress-text"><span id="teamProgressCount">4</span>/4 skills</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== How ProjectHub works ===== -->
+    <section class="landing-section story" id="how">
+      <div class="container">
+        <header class="section-head" data-head>
+          <h2>How ProjectHub works</h2>
+          <p>Three simple steps from your profile to your new team.</p>
+        </header>
+
+        <div class="story-grid">
+          <div class="story-steps">
+            <article class="story-step active">
+              <span class="step-index">01</span>
+              <h3>Add your skills</h3>
+              <p>Write your skills, interests, and the roles you like when you create your account.</p>
+            </article>
+            <article class="story-step">
+              <span class="step-index">02</span>
+              <h3>Find or create a team</h3>
+              <p>Search teams by skill or type, see the teams that best match you, or post your own team.</p>
+            </article>
+            <article class="story-step">
+              <span class="step-index">03</span>
+              <h3>Send or accept requests</h3>
+              <p>Ask to join a team you like. If you created a team, accept the students you need.</p>
+            </article>
+            <div class="story-rail" aria-hidden="true"><span class="story-rail-fill"></span></div>
+          </div>
+
+          <!-- Pictures for each step (decorative) -->
+          <div class="story-panel" aria-hidden="true">
+            <div class="story-window">
+              <div class="window-bar">
+                <span class="window-dots"><i></i><i></i><i></i></span>
+                <span class="window-label" id="storyLabel">Step 1 · Add your skills</span>
+              </div>
+              <div class="story-scenes">
+
+                <!-- Step 1: profile with skills -->
+                <div class="scene scene-profile active">
+                  <div class="mini-profile pop">
+                    <span class="mini-avatar">NA</span>
+                    <span><strong>Norah</strong><small>Your profile</small></span>
+                  </div>
+                  <span class="mini-label pop">Skills</span>
+                  <div class="chip-row">
+                    <span class="chip chip-back pop">Back-end</span>
+                    <span class="chip chip-design pop">UI/UX Design</span>
+                    <span class="chip chip-front pop">JavaScript</span>
+                    <span class="chip chip-data pop">PHP</span>
+                  </div>
+                  <span class="mini-label pop">Preferred role</span>
+                  <div class="chip-row">
+                    <span class="chip chip-outline pop">Back-end Developer</span>
+                  </div>
+                </div>
+
+                <!-- Step 2: skills connect to a team -->
+                <div class="scene scene-match">
+                  <div class="match-from pop">
+                    <span class="mini-avatar">NA</span>
+                    <span class="chip chip-back">Back-end</span>
+                    <span class="chip chip-design">UI/UX Design</span>
+                  </div>
+                  <div class="connector"><span class="connector-dot"></span></div>
+                  <div class="team-mini pop">
+                    <div class="team-mini-top">
+                      <span class="project-type"><i class="bi bi-lightning-charge-fill"></i>Hackathon</span>
+                      <span class="match-pill"><i class="bi bi-stars"></i>3 matches</span>
+                    </div>
+                    <strong>Smart Campus App</strong>
+                    <div class="chip-row">
+                      <span class="chip need need-on">Back-end</span>
+                      <span class="chip need need-on">UI/UX Design</span>
+                      <span class="chip need">Front-end</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 3: request is sent and accepted -->
+                <div class="scene scene-request">
+                  <i class="bi bi-send-fill paper-plane"></i>
+                  <div class="request-mini pop">
+                    <span class="mini-label">Join request</span>
+                    <div class="request-row">
+                      <span class="mini-avatar">NA</span>
+                      <span class="request-text"><strong>Norah</strong><small>wants to join Smart Campus App</small></span>
+                      <span class="state">
+                        <span class="state-badge state-pending"><i class="bi bi-hourglass-split"></i>Pending</span>
+                        <span class="state-badge state-accepted"><i class="bi bi-check-circle-fill"></i>Accepted</span>
+                      </span>
+                    </div>
+                    <div class="request-buttons">
+                      <span class="fake-btn fake-accept"><i class="bi bi-check-lg"></i>Accept</span>
+                      <span class="fake-btn">Reject</span>
+                    </div>
+                  </div>
+                  <div class="members-mini pop">
+                    <span class="mini-label">Team members</span>
+                    <span class="member-stack">
+                      <span class="mini-avatar">SA</span>
+                      <span class="mini-avatar">LA</span>
+                      <span class="mini-avatar new-member">NA</span>
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Team types (bento grid) ===== -->
+    <section class="landing-section types">
+      <div class="container">
+        <header class="section-head" data-head>
+          <h2>One place for every kind of team</h2>
+        </header>
+
+        <div class="bento" id="bento">
+          <article class="bento-card bento-hackathon">
+            <div class="bento-text">
+              <span class="bento-icon"><i class="bi bi-lightning-charge"></i></span>
+              <h3>Hackathons</h3>
+              <p>Complete your team before the deadline with the skills it is missing.</p>
+            </div>
+            <!-- Team with one missing skill -->
+            <div class="bento-art art-hackathon" aria-hidden="true">
+              <div class="code-window">
+                <span class="code-line w-70"></span>
+                <span class="code-line w-45 accent"></span>
+                <span class="code-line w-60"></span>
+              </div>
+              <div class="slot-row">
+                <span class="slot-dot">SA</span>
+                <span class="slot-dot">HI</span>
+                <span class="slot-dot">LA</span>
+                <span class="slot-dot slot-missing"><i class="bi bi-plus-lg"></i></span>
+              </div>
+              <div class="deadline"><i class="bi bi-clock"></i><span class="deadline-bar"><span></span></span></div>
+            </div>
+          </article>
+
+          <article class="bento-card bento-competition">
+            <div class="bento-text">
+              <span class="bento-icon"><i class="bi bi-trophy"></i></span>
+              <h3>Competitions</h3>
+              <p>Find students who share your interest in the same challenge.</p>
+            </div>
+            <!-- Students around one challenge -->
+            <div class="bento-art art-competition" aria-hidden="true">
+              <span class="orbit orbit-1"><span class="orbit-avatar">LA</span></span>
+              <span class="orbit orbit-2"><span class="orbit-avatar">MA</span></span>
+              <span class="orbit orbit-3"><span class="orbit-avatar">NA</span></span>
+              <span class="trophy"><i class="bi bi-trophy-fill"></i></span>
+            </div>
+          </article>
+
+          <article class="bento-card bento-project">
+            <div class="bento-text">
+              <span class="bento-icon"><i class="bi bi-folder2-open"></i></span>
+              <h3>Practical projects</h3>
+              <p>Build balanced course teams instead of choosing at random.</p>
+            </div>
+            <!-- Balanced skills in one team -->
+            <div class="bento-art art-project" aria-hidden="true">
+              <div class="balance">
+                <span class="bar"><span class="bar-fill"></span><small>Front</small></span>
+                <span class="bar"><span class="bar-fill"></span><small>Back</small></span>
+                <span class="bar"><span class="bar-fill"></span><small>UI/UX</small></span>
+                <span class="bar"><span class="bar-fill"></span><small>Data</small></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Final call to action ===== -->
+    <section class="landing-section final">
+      <div class="container">
+        <div class="final-panel" id="finalPanel">
+          <div class="final-aurora" aria-hidden="true"></div>
+          <div class="final-content">
+            <span class="final-logo"><img src="images/logo.png" alt=""></span>
+            <h2>Ready to find your team?</h2>
+            <p>Create your profile in a minute and see the teams that need your skills.</p>
+            <div class="hero-buttons justify-content-center">
+              <a class="btn btn-light-glow" href="pages/register.html">Create an account<i class="bi bi-arrow-right ms-2"></i></a>
+              <a class="btn btn-glass" href="pages/login.html">Log in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shown after login -->
+  <main id="dashboardSection">
+    <div class="container py-4">
+      <section class="welcome-banner mb-4">
+        <h1>Welcome back, <span id="welcomeName"></span></h1>
+        <p>Here are the teams that need your skills and the latest updates on your requests.</p>
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <button class="btn btn-light" type="button" disabled><i class="bi bi-stars me-1"></i>See my best matches</button>
+          <a class="btn btn-outline-light" href="pages/create-team.html"><i class="bi bi-plus-lg me-1"></i>Create team</a>
+        </div>
+        <img class="banner-logo" src="images/logo.png" alt="">
+      </section>
+
+      <div class="row g-3">
+        <div class="col-md-4">
+          <a class="ph-card ph-card-hover stat-card" href="pages/profile.html">
+            <span class="icon-box"><i class="bi bi-people"></i></span>
+            <span><span class="number d-block" id="myTeamsCount">0</span><span class="meta">My teams</span></span>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <div class="ph-card stat-card is-disabled" aria-disabled="true">
+            <span class="icon-box"><i class="bi bi-inbox"></i></span>
+            <span><span class="number d-block">0</span><span class="meta">New requests for my teams</span></span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ph-card stat-card is-disabled" aria-disabled="true">
+            <span class="icon-box"><i class="bi bi-send"></i></span>
+            <span><span class="number d-block">0</span><span class="meta">Requests I sent</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <h2><i class="bi bi-stars me-2" style="color: var(--ph-primary);"></i>Best matches for you</h2>
+        <span class="is-disabled" aria-disabled="true">See all</span>
+      </div>
+      <div class="row g-4" id="homeMatches">
+        <div class="col-12"><div class="ph-card empty-state"><i class="bi bi-stars"></i><h3>Coming soon</h3><p>Team Matching recommendations will be available soon.</p></div></div>
+      </div>
+
+      <div class="section-heading">
+        <h2><i class="bi bi-people me-2" style="color: var(--ph-primary);"></i>My teams</h2>
+        <a href="pages/profile.html">View profile</a>
+      </div>
+      <div class="row g-4 mb-5" id="myTeamsList"></div>
+    </div>
+  </main>
+
+  <footer class="ph-footer">
+    <span><img class="footer-logo" src="images/logo.png" alt="">ProjectHub &copy; 2026</span>
+    <a class="footer-email" href="mailto:projecthub@outlook.sa"><i class="bi bi-envelope"></i>projecthub@outlook.sa</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/landing.js"></script>
+  <script>
+    setupHomePage();
+  </script>
+</body>
+</html>
