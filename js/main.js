@@ -1,6 +1,5 @@
 // Shared code used by all pages
 
-// Pages inside the "pages" folder need "../" to reach the main folder
 const inPagesFolder = window.location.pathname.includes("/pages/");
 const rootPath = inPagesFolder ? "../" : "";
 const pagesPath = inPagesFolder ? "" : "pages/";
@@ -19,7 +18,6 @@ function getUrlParam(name) {
   return params.get(name);
 }
 
-// "HTML, CSS, JavaScript" -> ["HTML", "CSS", "JavaScript"]
 function textToList(text) {
   return text
     .split(",")
@@ -215,17 +213,13 @@ function setupPasswordToggles() {
   });
 }
 
-// ---------- Live preview of skills as tags ----------
 
 // ---------- Drop-down list with checkboxes ----------
 
-// Turns a hidden input into a drop-down list where the student ticks items.
-// The chosen items are saved in the hidden input like "Back-end, PHP",
-// so the rest of the code reads it the same way as a normal text field.
+
 function setupMultiSelect(fieldId, groups, placeholder) {
   const field = document.getElementById(fieldId);
 
-  // Put the hidden input inside a box that holds the whole list
   const box = document.createElement("div");
   box.className = "dropdown multi-select";
   field.parentNode.insertBefore(box, field);
@@ -495,8 +489,7 @@ function logoutUser() {
   localStorage.removeItem("currentUserId");
 }
 
-// Send the user to the login page if they are not logged in.
-// Student pages send the admin to the admin dashboard, unless allowAdmin is true.
+
 function requireLogin(allowAdmin) {
   const user = getCurrentUser();
   if (!user) {
