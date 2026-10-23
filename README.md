@@ -2,7 +2,7 @@
 
 ProjectHub is a web-based team formation platform that helps university students find suitable teammates for hackathons, competitions, and practical projects based on their skills.
 
-IT320 Practical Software Engineering - King Saud University - Section 76361, Group 4.
+IT320 - Section 76361, Group 4.
 
 ## Live demo
 
