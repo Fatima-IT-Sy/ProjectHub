@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requests | ProjectHub</title>
+  <link rel="icon" href="../images/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav id="navbar"></nav>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1>Requests</h1>
+        <p>Answer students who want to join your teams, and follow the requests you sent.</p>
+      </div>
+
+      <ul class="nav ph-tabs mb-4" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="receivedTab" data-bs-toggle="tab" data-bs-target="#receivedPanel" type="button" role="tab">
+            <i class="bi bi-inbox me-1"></i>Received <span class="badge rounded-pill tab-count ms-1" id="receivedCount">0</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="sentTab" data-bs-toggle="tab" data-bs-target="#sentPanel" type="button" role="tab">
+            <i class="bi bi-send me-1"></i>Sent <span class="badge rounded-pill tab-count ms-1" id="sentCount">0</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content mb-5">
+        <div class="tab-pane fade show active" id="receivedPanel" role="tabpanel">
+          <div id="receivedList">
+            <div class="ph-card empty-state"><i class="bi bi-inbox"></i><h3>No requests yet</h3><p>Join requests for your teams will appear here.</p></div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="sentPanel" role="tabpanel">
+          <div id="sentList">
+            <div class="ph-card empty-state"><i class="bi bi-send"></i><h3>No requests yet</h3><p>The join requests you send will appear here.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="ph-footer">
+    <span>ProjectHub &copy; 2026</span>
+    <a class="footer-email" href="mailto:projecthub@outlook.sa"><i class="bi bi-envelope"></i>projecthub@outlook.sa</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

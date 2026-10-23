@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | ProjectHub</title>
+  <link rel="icon" href="../images/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <script>
+    // Tell the CSS that JavaScript is on, so content stays visible without it
+    document.documentElement.classList.add("js");
+  </script>
+</head>
+<body>
+  <nav id="navbar"></nav>
+
+  <main class="about">
+
+    <!-- ===== Intro ===== -->
+    <section class="about-hero">
+      <div class="container">
+        <span class="about-eyebrow reveal"><i class="bi bi-stars"></i>About ProjectHub</span>
+        <h1 class="reveal">Built by a team, <span class="gradient-text">for teams.</span></h1>
+        <p class="reveal">ProjectHub is a course project for IT320 Practical Software Engineering at King Saud University. We are four Information Technology students who wanted to make it easier for students to find the right teammates for hackathons, competitions, and practical projects.</p>
+      </div>
+    </section>
+
+    <!-- ===== The team ===== -->
+    <section class="about-section">
+      <div class="container">
+        <header class="about-head reveal">
+          <h2>Meet the team</h2>
+          <p>Four developers, four sets of skills, one project.</p>
+        </header>
+
+        <div class="team-stage" id="teamStage">
+          <svg class="team-lines" id="teamLines" aria-hidden="true">
+            <defs>
+              <linearGradient id="teamLineColor" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#06B6D4"/>
+                <stop offset="1" stop-color="#A855F7"/>
+              </linearGradient>
+            </defs>
+            <path class="team-line"/><path class="team-line"/><path class="team-line"/><path class="team-line"/>
+          </svg>
+
+          <div class="team-column">
+          <div class="member-card" id="member0">
+            <span class="member-avatar">FM</span>
+            <span class="member-info"><strong>Fatima Mohammed</strong><span class="member-tags"><span class="member-role">Developer</span><a class="member-x" href="https://x.com/Y21Glor" target="_blank" rel="noopener" aria-label="Fatima Mohammed on X"><i class="bi bi-twitter-x"></i></a></span></span>
+            <i class="bi bi-check-lg member-check"></i>
+          </div>
+          <div class="member-card" id="member1">
+            <span class="member-avatar">NA</span>
+            <span class="member-info"><strong>Norah Almifqaee</strong><span class="member-tags"><span class="member-role">Developer</span><a class="member-x" href="https://x.com/4tfill" target="_blank" rel="noopener" aria-label="Norah Almifqaee on X"><i class="bi bi-twitter-x"></i></a></span></span>
+            <i class="bi bi-check-lg member-check"></i>
+          </div>
+          </div>
+
+          <div class="hub-card" id="hubCard">
+            <span class="hub-logo"><img src="../images/logo.png" alt=""></span>
+            <strong>ProjectHub</strong>
+            <span class="hub-label">Team complete</span>
+            <span class="hub-progress"><span class="hub-fill" id="hubFill"></span></span>
+            <span class="hub-count"><span id="hubCount">4</span>/4 developers</span>
+          </div>
+
+          <div class="team-column">
+          <div class="member-card" id="member2">
+            <span class="member-avatar">QA</span>
+            <span class="member-info"><strong>Qmash Alzabin</strong><span class="member-tags"><span class="member-role">Developer</span><a class="member-x" href="https://x.com/g9llllll" target="_blank" rel="noopener" aria-label="Qmash Alzabin on X"><i class="bi bi-twitter-x"></i></a></span></span>
+            <i class="bi bi-check-lg member-check"></i>
+          </div>
+          <div class="member-card" id="member3">
+            <span class="member-avatar">RA</span>
+            <span class="member-info"><strong>Reema almjaideea</strong><span class="member-tags"><span class="member-role">Developer</span><a class="member-x" href="https://x.com/pI4ceb0" target="_blank" rel="noopener" aria-label="Reema almjaideea on X"><i class="bi bi-twitter-x"></i></a></span></span>
+            <i class="bi bi-check-lg member-check"></i>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Why we built it ===== -->
+    <section class="about-section">
+      <div class="container">
+        <header class="about-head reveal">
+          <h2>Why we built ProjectHub</h2>
+          <p>We asked university students how they find teammates. Here is what they told us.</p>
+        </header>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="number-card reveal">
+              <span class="big-number" data-count="93.9">93.9%</span>
+              <p>said the biggest difficulty is finding people with the required skills.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="number-card reveal delay-1">
+              <span class="big-number" data-count="87.9">87.9%</span>
+              <p>find their teammates through friends or classmates only.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="number-card reveal delay-2">
+              <span class="big-number" data-count="81.8">81.8%</span>
+              <p>rated a Team Matching feature as very useful.</p>
+            </div>
+          </div>
+        </div>
+        <p class="about-source reveal">Source: ProjectHub student questionnaire, 2026.</p>
+      </div>
+    </section>
+
+    <!-- ===== Our values ===== -->
+    <section class="about-section">
+      <div class="container">
+        <header class="about-head reveal">
+          <h2>What we believe in</h2>
+        </header>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="value-card reveal">
+              <span class="value-icon"><i class="bi bi-lightning-charge"></i></span>
+              <h3>Skills first</h3>
+              <p>Students should be matched by what they can do, not by chance.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-card reveal delay-1">
+              <span class="value-icon"><i class="bi bi-diagram-3"></i></span>
+              <h3>Balanced teams</h3>
+              <p>Every team should get the skills it is missing.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-card reveal delay-2">
+              <span class="value-icon"><i class="bi bi-mortarboard"></i></span>
+              <h3>By students, for students</h3>
+              <p>We built the platform we wished we had for our own projects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Closing ===== -->
+    <section class="about-section pb-5">
+      <div class="container">
+        <div class="about-cta reveal">
+          <span class="cta-logo"><img src="../images/logo.png" alt=""></span>
+          <h2>Made by KSU students, for every student.</h2>
+          <p>Start building a team where every skill fits.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3" id="aboutButtons"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ph-footer">
+    <span>ProjectHub &copy; 2026</span>
+    <a class="footer-email" href="mailto:projecthub@outlook.sa"><i class="bi bi-envelope"></i>projecthub@outlook.sa</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/about.js"></script>
+  <script>
+    setupAboutPage();
+  </script>
+</body>
+</html>
