@@ -4,10 +4,6 @@ ProjectHub is a web-based team formation platform that helps university students
 
 IT320 - Section 76361, Group 4.
 
-## Live demo
-
-Website: https://fatima-it-sy.github.io/ProjectHub/
-
 ## Sample accounts
 
 - Student: `sara@example.com` / `Sample123`
