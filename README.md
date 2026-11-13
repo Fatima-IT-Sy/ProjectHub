@@ -20,6 +20,4 @@ Website: https://fatima-it-sy.github.io/ProjectHub/
 - Reema Almjaideea
 - Qmash Alzabin
 
-## Note
 
-As required in Phase 3, the website is not connected to a database yet. Data is saved temporarily in the browser, and the database connection will be added in Sprint 2.
