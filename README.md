@@ -9,6 +9,10 @@ IT320 - Section 76361, Group 4.
 - Student: `sara@example.com` / `Sample123`
 - Admin: `admin@projecthub.com` / `Admin123`
 
+## Live demo
+
+Website: https://fatima-it-sy.github.io/ProjectHub/
+
 ## Team
 
 - Fatima Mohammed
